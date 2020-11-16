@@ -1,11 +1,12 @@
 package lukaszkutylowski.dao;
 
-import lukaszkutylowski.model.SelectPayload;
+import lukaszkutylowski.model.Payload;
 
 import java.util.List;
 
 public interface CompanyDAO {
-    List<SelectPayload> get();
+    List<Payload> get();
+    Payload save(Payload payload);
 //    Employee get(int id);
 //    void save(Employee employee);
 //    void  delete(int id);

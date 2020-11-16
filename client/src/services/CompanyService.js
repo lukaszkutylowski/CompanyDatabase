@@ -5,9 +5,19 @@ const COMPANY_API_BASE_URL =
 
 class CompanyService {
 
-    getSelectPayload() {
+    getAllSelectPayload() {
         return axios.get(
         COMPANY_API_BASE_URL + "/all");
+    }
+
+    saveEmployee(payload) {
+        return axios.post(
+        COMPANY_API_BASE_URL + "/save", payload);
+    }
+
+    getEmployeeById(employeeId) {
+        return axios.get(
+        COMPANY_API_BASE_URL + "/" + employeeId);
     }
 }
 

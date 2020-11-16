@@ -1,9 +1,10 @@
 package lukaszkutylowski.service;
 
-import lukaszkutylowski.model.SelectPayload;
+import lukaszkutylowski.model.Payload;
 
 import java.util.List;
 
 public interface CompanyService {
-    List<SelectPayload> get();
+    List<Payload> get();
+    Payload save(Payload payload);
 }

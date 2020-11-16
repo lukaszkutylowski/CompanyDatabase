@@ -6,20 +6,29 @@ class ListEmployeeComponent extends Component{
         super(props);
 
         this.state = {
-            company : []
+            payload : []
         }
+
+        this.addEmployee = this.addEmployee.bind(this);
     }
 
     componentDidMount(){
-        CompanyService.getSelectPayload().then( res => {
-            this.setState({company : res.data});
+        CompanyService.getAllSelectPayload().then( res => {
+            this.setState({payload : res.data});
         });
+    }
+
+    addEmployee() {
+        this.props.history.push("/save");
     }
 
     render() {
         return(
             <div>
                 <h2 className="text-center">Company Database</h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addEmployee}>Add Employee</button>
+                </div>
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>
@@ -29,7 +38,7 @@ class ListEmployeeComponent extends Component{
                         </thead>
                         <tbody>
                             {
-                                this.state.company.map(
+                                this.state.payload.map(
                                     info => 
                                     <tr key = {info.id}>
                                         <td>{info.firstname}</td>
