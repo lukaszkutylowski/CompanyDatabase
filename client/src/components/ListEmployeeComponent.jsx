@@ -22,6 +22,10 @@ class ListEmployeeComponent extends Component{
         this.props.history.push("/save");
     }
 
+    viewEmployee(id) {
+        this.props.history.push("/view/" + id);
+    }
+
     render() {
         return(
             <div>
@@ -40,9 +44,12 @@ class ListEmployeeComponent extends Component{
                             {
                                 this.state.payload.map(
                                     info => 
-                                    <tr key = {info.id}>
+                                    <tr key = {info.employee_id}>
                                         <td>{info.firstname}</td>
                                         <td>{info.lastname}</td>
+                                        <td>
+                                            <button style={{marginLetf: "10px"}} onClick={ () => this.viewEmployee(info.employee_id)} className="btn btn-info">View</button>
+                                        </td>
                                     </tr>
                                 )
                             }
