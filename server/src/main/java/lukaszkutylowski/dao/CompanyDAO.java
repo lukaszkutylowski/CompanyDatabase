@@ -7,7 +7,7 @@ import java.util.List;
 public interface CompanyDAO {
     List<Payload> get();
     Payload save(Payload payload);
-//    Employee get(int id);
-//    void save(Employee employee);
-//    void  delete(int id);
+    Payload update(Payload payload, int id);
+    Payload getById(int id);
+    Payload delete(int id);
 }
