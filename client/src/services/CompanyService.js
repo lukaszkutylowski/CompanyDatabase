@@ -15,9 +15,21 @@ class CompanyService {
         COMPANY_API_BASE_URL + '/save', payload);
     }
 
-    getEmployeeById(employeeId) {
+    getEmployeeById(employee_id) {
         return axios.get(
-        COMPANY_API_BASE_URL + '/get/' + employeeId);
+        COMPANY_API_BASE_URL + '/get/' + employee_id);
+    }
+
+    updateEmployee(payload, employee_id) {
+        return axios.put(
+        COMPANY_API_BASE_URL + '/update/' + employee_id, payload
+        );
+    }
+
+    deleteEmployee(employee_id) {
+        return axios.delete(
+        COMPANY_API_BASE_URL + '/delete/' + employee_id
+        );
     }
 }
 

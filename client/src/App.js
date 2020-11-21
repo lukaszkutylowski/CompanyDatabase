@@ -2,6 +2,7 @@ import './App.css';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import CreateEmployeeComponent from './components/CreateEmployeeComponent';
 import ViewEmployeeComponent from './components/ViewEmployeeComponent';
+import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 
 import {
   BrowserRouter as Router,
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" exact component={ListEmployeeComponent}/>
           <Route path="/save" component={CreateEmployeeComponent}/>
           <Route path="/view/:employee_id" component={ViewEmployeeComponent}/>
-          {/* <Route path="" component={}/> */}
+          <Route path="/update/:employee_id" component={UpdateEmployeeComponent}/>
         </Switch>
         </div>
       </Router>
